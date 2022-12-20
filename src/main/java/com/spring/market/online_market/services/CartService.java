@@ -2,11 +2,13 @@ package com.spring.market.online_market.services;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import com.spring.market.online_market.dto.Cart;
+import com.spring.market.online_market.entities.Cart;
 import com.spring.market.online_market.entities.Product;
 import com.spring.market.online_market.exceptions.ResourceNotFoundException;
+import com.spring.market.online_market.entities.CartItem;
 
 import javax.annotation.PostConstruct;
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -24,7 +26,17 @@ public class CartService {
     }
 
     public void add(Long productId) {
-        Product product = productService.findById(productId).orElseThrow(() -> new ResourceNotFoundException("Не удается добавить продукт с id: " + productId + " в корзину. Продукт не найден"));
-        tempCart.add(product);
+        for (CartItem cartItem : tempCart.getItems()) {
+            if (cartItem.getProduct().getId().equals(productId)) {
+                cartItem.incrementQuantity();
+                tempCart.recalculate();
+                return;
+            }
+        }
+
+        Product product = productService.findById(productId).orElseThrow(() -> new ResourceNotFoundException("Product doesn't exists id: " + productId + " (add to cart)"));
+        List<CartItem> cartItemList = tempCart.getItems();
+        cartItemList.add(new CartItem(product));
+        tempCart.recalculate();
     }
 }
