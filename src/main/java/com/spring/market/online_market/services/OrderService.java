@@ -29,6 +29,7 @@ public class OrderService {
             oi.setOrder(order);
         }
         order.setPhone(orderDetailsDto.getPhone());
+        order.setAddress(orderDetailsDto.getDeliveryAddress().toString());
         order = orderRepository.save(order);
         cart.clear();
         return order;
