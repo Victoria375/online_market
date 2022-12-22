@@ -8,8 +8,8 @@ insert into products (title, price) values ('phone', 1000), ('computer', 5000), 
 create table if not exists users (id bigserial primary key, username VARCHAR(20), password VARCHAR(200));
 
 insert into users (username, password) values
-('user', '$2a$12$Tu9FBCrcvk8qKMX0hJ/p..TSSyTWcyVo2rSW0fRyoapJoWXPs30yG'),
-('admin', '$2a$12$afHxA4xM/R.MrLGWVTJ.4uTwDlUsr5uDBt2eRUKaO2IcxwCnt/cV2');
+('bob', '$2a$12$NHwWdLoNbzMNx3kizf7xyO56VWy7xjEABjRduTtuI.BOb4aMVlKr2'),
+('john', '$2a$12$zjpwQbrgf.mlZ1egiJba6eQDEg.wUJsZJQ/F8Qhexjq1TOTZqTk5a');
 
 create table if not exists roles (id bigserial primary key, name VARCHAR(20));
 
