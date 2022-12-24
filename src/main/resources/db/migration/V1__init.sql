@@ -22,7 +22,7 @@ insert into users_roles (user_id, role_id) values (1, 1), (2, 2);
 
 
 create table if not exists orders (id bigserial primary key, user_id int references users (id), price int,
-phone varchar(55));
+phone varchar(55), address varchar(255));
 
 create table if not exists cart_items (id bigserial primary key, order_id int references orders (id),
 product_id int references products (id), quantity int, price_per_product int, price int);
