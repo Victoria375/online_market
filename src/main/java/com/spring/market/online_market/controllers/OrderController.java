@@ -2,8 +2,8 @@ package com.spring.market.online_market.controllers;
 
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-import com.spring.market.online_market.dto.OrderDetailsDto;
-import com.spring.market.online_market.dto.OrderDto;
+import com.spring.market.online_market.entities.dto.OrderDetailsDto;
+import com.spring.market.online_market.entities.dto.OrderDto;
 import com.spring.market.online_market.entities.User;
 import com.spring.market.online_market.services.OrderService;
 import com.spring.market.online_market.services.UserService;

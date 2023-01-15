@@ -10,8 +10,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import com.spring.market.online_market.dto.JwtRequest;
-import com.spring.market.online_market.dto.JwtResponse;
+import com.spring.market.online_market.entities.dto.JwtRequest;
+import com.spring.market.online_market.entities.dto.JwtResponse;
 import com.spring.market.online_market.services.UserService;
 import com.spring.market.online_market.utils.JwtTokenUtil;
 

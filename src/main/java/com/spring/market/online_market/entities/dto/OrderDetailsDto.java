@@ -1,4 +1,4 @@
-package com.spring.market.online_market.dto;
+package com.spring.market.online_market.entities.dto;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

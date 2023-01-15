@@ -1,5 +1,6 @@
 package com.spring.market.online_market.services;
 
+import com.spring.market.online_market.entities.dto.ProductDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import com.spring.market.online_market.entities.Product;
@@ -24,4 +25,13 @@ public class ProductService {
     public void deleteById(Long id) {
         productRepository.deleteById(id);
     }
+
+    public Product createNewProduct(ProductDto productDto) {
+        Product product = new Product();
+        product.setPrice(productDto.getPrice());
+        product.setTitle(productDto.getTitle());
+        productRepository.save(product);
+        return product;
+    }
+
 }

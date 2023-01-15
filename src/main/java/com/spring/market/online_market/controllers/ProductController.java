@@ -2,7 +2,7 @@ package com.spring.market.online_market.controllers;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-import com.spring.market.online_market.dto.ProductDto;
+import com.spring.market.online_market.entities.dto.ProductDto;
 import com.spring.market.online_market.entities.Product;
 import com.spring.market.online_market.exceptions.ResourceNotFoundException;
 import com.spring.market.online_market.services.ProductService;

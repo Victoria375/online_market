@@ -2,7 +2,7 @@ package com.spring.market.online_market.services;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import com.spring.market.online_market.dto.OrderDetailsDto;
+import com.spring.market.online_market.entities.dto.OrderDetailsDto;
 import com.spring.market.online_market.entities.Order;
 import com.spring.market.online_market.entities.CartItem;
 import com.spring.market.online_market.entities.User;
