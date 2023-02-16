@@ -27,7 +27,7 @@ public class ProductService {
     }
 
     public Product createNewProduct(ProductDto productDto) {
-        Product product = new Product();
+        Product product = Product.builder().build();
         product.setPrice(productDto.getPrice());
         product.setTitle(productDto.getTitle());
         productRepository.save(product);

@@ -1,5 +1,6 @@
 package com.spring.market.online_market.entities;
 
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
@@ -11,7 +12,8 @@ import java.time.LocalDateTime;
 @Entity
 @Data
 @Table(name = "products")
-@NoArgsConstructor
+//@NoArgsConstructor
+@Builder
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
