@@ -25,4 +25,8 @@ public class User {
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Collection<Role> roles;
+
+    void update(String news) {
+        System.out.println(username + "получил рассылку: " + news);
+    }
 }
