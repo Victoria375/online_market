@@ -1,6 +1,7 @@
 package com.spring.market.online_market.entities;
 
 import com.spring.market.online_market.entities.CartItem;
+import com.spring.market.online_market.entities.dto.ProductDto;
 import lombok.Data;
 
 import java.util.ArrayList;
@@ -20,10 +21,17 @@ public class Cart {
         return Collections.unmodifiableList(items);
     }
 
-//    public void add(Product product) { // TODO: Доработать в ДЗ
-//        items.add(new CartItem(product.getId(), product.getTitle(), 1, product.getPrice(), product.getPrice()));
-//        recalculate();
-//    }
+    public void add(Product product) {
+        for (CartItem item : items) {
+            if (product.getId().equals(item.getProductId())) {
+                item.incrementQuantity();
+                recalculate();
+                return;
+            }
+        }
+        items.add(new CartItem(product));
+        recalculate();
+    }
 
     public void recalculate() {
         totalPrice = 0;

@@ -1,5 +1,6 @@
 package com.spring.market.online_market.entities;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -10,6 +11,7 @@ import java.io.Serializable;
 @Table(name = "cart_items")
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 public class CartItem implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -43,5 +45,9 @@ public class CartItem implements Serializable {
     public void incrementQuantity() {
         this.quantity++;
         this.price = this.pricePerProduct;
+    }
+
+    public Product getProductId() {
+        return product;
     }
 }
